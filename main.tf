@@ -6,6 +6,12 @@ terraform {
   }
 }
 
+  backend "s3" {
+    bucket = "YOUR-UNIQUE-BUCKET-ID"
+    key    = "terraform/webapp/terraform.tfstate"
+    region = "us-east-1"
+}
+
 provider "aws" {
   region = var.region
 }
